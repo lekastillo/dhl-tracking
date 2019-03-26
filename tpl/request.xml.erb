@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<req:req:KnownTrackingRequest xmlns:req="http://www.dhl.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="6.2" xsi:schemaLocation="http://www.dhl.com TrackingRequestKnown.xsd">
+	<Request>
+		<ServiceHeader>
+			<MessageTime><%= @shipment_time %></MessageTime>
+			<MessageReference><%= @shipment_reference %></MessageReference>
+            <SiteID><%= @site_id %></SiteID>
+            <Password><%= @password %></Password>
+		</ServiceHeader>
+        <MetaData>
+			<SoftwareName>Movipost WebSite</SoftwareName>
+			<SoftwareVersion>0.5</SoftwareVersion>
+		</MetaData>
+	</Request>
+	<LanguageCode><%= @language %></LanguageCode>
+	<AWBNumber><%= @awb_number %></AWBNumber>
+	<LevelOfDetails><%= @requested_all_check_point ? 'ALL_CHECK_POINTS' : 'LAST_CHECK_POINT_ONLY'%></LevelOfDetails>
+	<PiecesEnabled><%= @pieces_enable %></PiecesEnabled>
+
+</req:KnownTrackingRequest>
