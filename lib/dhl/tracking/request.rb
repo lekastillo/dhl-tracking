@@ -55,7 +55,7 @@ class Dhl::Tracking::Request
   end
   
   def to_xml
-    validate!
+    # validate!
     @to_xml = ERB.new(File.new(xml_template_path).read, nil,'%<>-').result(binding)
   end
 
@@ -115,9 +115,9 @@ protected
     test_mode? ? URLS[:test] : URLS[:production]
   end
 
-  def validate!
-    raise Dhl::Tracking::IwbNumberNotSetError, "#from() is not set" unless !(@awb_number)
-  end
+  # def validate!
+  #   raise Dhl::Tracking::IwbNumberNotSetError, "#from() is not set" unless !(@awb_number)
+  # end
 
   def xml_template_path
     spec = Gem::Specification.find_by_name("dhl-tracking")

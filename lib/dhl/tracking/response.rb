@@ -2,7 +2,6 @@ class Dhl::Tracking::Response
   include Dhl::Tracking::Helper
 
   attr_reader :raw_xml, :parsed_xml, :errors
-  attr_reader , :weight_charge_tax
 
   def initialize(xml="")
     @raw_xml = xml
