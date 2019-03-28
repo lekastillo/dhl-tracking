@@ -5,6 +5,7 @@ require "dhl/tracking/helper"
 require "dhl/tracking/errors"
 require "dhl/tracking/request"
 require "dhl/tracking/response"
+require "dhl/tracking/awbinfo"
 
 class Dhl
   class Tracking
