@@ -55,5 +55,20 @@ protected
     end
       # @parsed_xml["DCTResponse"]["GetQuoteResponse"]["Srvs"]["Srv"]["MrkSrv"]
   end
+  def response_indicates_error?
+    @parsed_xml.keys.include?('ShipmentTrackingErrorResponse')
+  end
+
+  def response_error_status_condition
+    @response_error_status_condition ||= @parsed_xml['ShipmentTrackingErrorResponse']['Response']['Status']['Condition']
+  end
+
+  def response_error_condition_code
+    @response_error_condition_code ||= response_error_status_condition['ConditionCode']
+  end
+
+  def response_error_condition_data
+    @response_error_condition_data ||= response_error_status_condition['ConditionData']
+  end
 
 end
