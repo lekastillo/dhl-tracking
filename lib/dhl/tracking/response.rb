@@ -37,7 +37,7 @@ class Dhl::Tracking::Response
   def all_awb_infos
     awb_infos.map do |m|
       Dhl::Tracking::Awbinfo.new(m)
-    end.sort{|a,b| a.shipment_date <=> b.shipment_date }
+    end
   end
 
 protected
@@ -49,7 +49,7 @@ protected
       if srv.is_a? Array
         srv.each{|aa| a << aa["AWBInfo"]}
       else
-        a << srv["AWBInfo"]
+       
       end
       a.flatten
     end
