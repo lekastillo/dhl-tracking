@@ -49,7 +49,7 @@ protected
       if srv.is_a? Array
         srv.each{|aa| a << aa["AWBInfo"]}
       else
-       
+        a << srv["AWBInfo"]
       end
       a.flatten
     end
