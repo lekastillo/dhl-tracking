@@ -12,4 +12,7 @@
 	<AWBNumber><%= @awb_number %></AWBNumber>
 	<LevelOfDetails><%= @requested_all_check_point ? 'ALL_CHECK_POINTS' : 'LAST_CHECK_POINT_ONLY'%></LevelOfDetails>
 	<PiecesEnabled><%= @pieces_enable %></PiecesEnabled>
+	<%- if !@country.nil? %>
+		<CountryCode><%= @country %></CountryCode>
+	<% end %>
 </req:KnownTrackingRequest>

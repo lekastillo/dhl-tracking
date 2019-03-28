@@ -5,7 +5,7 @@ require 'set'
 
 class Dhl::Tracking::Request
   attr_reader :site_id, :password
-  attr_accessor :shipment_time, :shipment_reference, :requested_all_check_point, :language, :awb_number, :pieces_enable
+  attr_accessor :shipment_time, :shipment_reference, :requested_all_check_point, :language, :awb_number, :pieces_enable, :country
 
   URLS = {
     :production => 'https://xmlpi-ea.dhl.com/XMLShippingServlet',
@@ -25,7 +25,7 @@ class Dhl::Tracking::Request
     end
 
     @requested_all_check_point = true
-    @language = 'es'
+    @language = 'en'
     @pieces_enable = 'S'
 
   end
